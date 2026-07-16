@@ -134,7 +134,7 @@ export default function Hero() {
               variant="ghost"
             >
               <LifeBuoy className="h-4 w-4 text-cyan-300" />
-              WhatsApp (2)
+              Support Ticket
             </GlassButton>
           </motion.div>
         </div>

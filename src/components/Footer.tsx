@@ -38,7 +38,7 @@ export default function Footer() {
                     aria-label="WhatsApp: Book your ticket (message 1)"
                   >
                     <TicketCheck className="h-4 w-4" />
-                    WhatsApp (1)
+                    Let's Start Our Journey
                   </GlassButton>
                   <GlassButton
                     href="https://wa.me/201229303030?text="
@@ -46,7 +46,7 @@ export default function Footer() {
                     variant="ghost"
                   >
                     <TicketCheck className="h-4 w-4" />
-                    WhatsApp (2)
+                    Support Ticket
                   </GlassButton>
                   <GlassButton href="https://www.maxmatech.com" variant="ghost">
                     maxmatech.com
