@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif-accent: "Instrument Serif", Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-void: #05050a;
+  --color-abyss: #090911;
+  --color-violet-glow: #8b5cf6;
+  --color-cyan-glow: #22d3ee;
+  --color-mist: rgba(255, 255, 255, 0.62);
+
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 38s linear infinite;
+  --animate-float-slow: float-slow 9s ease-in-out infinite;
+  --animate-float-slower: float-slower 13s ease-in-out infinite;
+  --animate-spin-slow: spin 18s linear infinite;
+  --animate-aurora-a: aurora-a 22s ease-in-out infinite alternate;
+  --animate-aurora-b: aurora-b 26s ease-in-out infinite alternate;
+  --animate-aurora-c: aurora-c 30s ease-in-out infinite alternate;
+  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+  --animate-drift: drift 16s ease-in-out infinite alternate;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-18px) rotate(1deg); }
+}
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-28px); }
+}
+@keyframes drift {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to { transform: translate(40px, -30px) rotate(6deg); }
+}
+@keyframes aurora-a {
+  0% { transform: translate(-10%, -6%) scale(1) rotate(0deg); }
+  50% { transform: translate(14%, 8%) scale(1.25) rotate(40deg); }
+  100% { transform: translate(-6%, 12%) scale(1.1) rotate(-20deg); }
+}
+@keyframes aurora-b {
+  0% { transform: translate(8%, 4%) scale(1.1) rotate(10deg); }
+  50% { transform: translate(-12%, -10%) scale(0.95) rotate(-30deg); }
+  100% { transform: translate(10%, -4%) scale(1.2) rotate(15deg); }
+}
+@keyframes aurora-c {
+  0% { transform: translate(0%, 10%) scale(1); }
+  50% { transform: translate(-8%, -14%) scale(1.3); }
+  100% { transform: translate(10%, 6%) scale(1.05); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); }
+  50% { opacity: 0.6; box-shadow: 0 0 0 7px rgba(52, 211, 153, 0); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-void);
+  color: #f4f4f8;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.4);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #07070d;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.5), rgba(34, 211, 238, 0.4));
+  border-radius: 99px;
+  border: 2px solid #07070d;
+}
+
+/* ----------  GLASS SYSTEM  ---------- */
+
+.glass {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02) 55%, rgba(255, 255, 255, 0.045));
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.03),
+    0 24px 60px -24px rgba(0, 0, 0, 0.65);
+}
+
+.glass-deep {
+  position: relative;
+  background: linear-gradient(160deg, rgba(20, 20, 34, 0.72), rgba(9, 9, 17, 0.6));
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    0 40px 90px -30px rgba(0, 0, 0, 0.8);
+}
+
+.glass-chip {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* sheen sweep used via .glass-sheen on hover */
+.glass-sheen {
+  overflow: hidden;
+}
+.glass-sheen::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0.16) 50%,
+    rgba(255, 255, 255, 0.08) 55%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.glass-sheen:hover::after {
+  transform: translateX(120%);
+}
+
+/* ----------  TEXT  ---------- */
+
+.text-gradient {
+  background: linear-gradient(100deg, #c4b5fd 0%, #8b5cf6 38%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.22);
+}
+
+.serif-accent {
+  font-family: var(--font-serif-accent);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ----------  TEXTURE / BACKDROP ---------- */
+
+.noise::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 75%);
+}
+
+.mask-fade-x {
+  mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+}
+
+.mask-fade-b {
+  mask-image: linear-gradient(180deg, black 55%, transparent 98%);
+  -webkit-mask-image: linear-gradient(180deg, black 55%, transparent 98%);
+}
+
+.blend-screen {
+  mix-blend-mode: screen;
+}
