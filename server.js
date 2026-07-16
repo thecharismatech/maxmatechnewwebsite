@@ -8,12 +8,12 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 const distDir = path.join(__dirname, 'dist');
-const indexHtml = path.join(distDir, 'index.html');
+const indexHtml = path.join(__dirname, 'index.html');
 
 app.disable('x-powered-by');
 
 // Serve static assets
-app.use(express.static(distDir, { index: false }));
+app.use(express.static(__dirname, { index: false }));
 
 // SPA fallback
 app.get('*', (req, res) => {
