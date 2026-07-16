@@ -122,9 +122,19 @@ export default function Hero() {
               Explore the stack
               <ArrowDown className="h-4 w-4" />
             </GlassButton>
-            <GlassButton href="https://www.maxmatech.com/my/tickets" variant="ghost">
+            <GlassButton
+              href="https://wa.me/201229303030?text=Hi%20Maxmatech%2C%20I%E2%80%99d%20like%20to%20book%20a%20support%20ticket%20for%20KYC%3A%20%5Bfill%20here%5D.%20My%20business%20need%20is%3A%20%5Bfill%20here%5D.%20Please%20assist.%"
+              variant="ghost"
+            >
               <LifeBuoy className="h-4 w-4 text-cyan-300" />
-              Book a support ticket
+              Book your ticket
+            </GlassButton>
+            <GlassButton
+              href="https://wa.me/201229303030?text=Hello%20Maxmatech%2C%20I%E2%80%99d%20like%20to%20schedule%20support%20for%20KYC%3A%20%5Bfill%20here%5D.%20Preferred%20time%3A%20%5Bfill%20here%5D.%20Thanks"
+              variant="ghost"
+            >
+              <LifeBuoy className="h-4 w-4 text-cyan-300" />
+              WhatsApp (2)
             </GlassButton>
           </motion.div>
         </div>

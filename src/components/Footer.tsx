@@ -33,9 +33,20 @@ export default function Footer() {
               </Reveal>
               <Reveal delay={0.24}>
                 <div className="mt-9 flex flex-wrap gap-3">
-                  <GlassButton href="https://www.maxmatech.com/my/tickets">
+                  <GlassButton
+                    href="https://wa.me/201229303030?text="
+                    aria-label="WhatsApp: Book your ticket (message 1)"
+                  >
                     <TicketCheck className="h-4 w-4" />
-                    Book your ticket
+                    WhatsApp (1)
+                  </GlassButton>
+                  <GlassButton
+                    href="https://wa.me/201229303030?text="
+                    aria-label="WhatsApp: Book your ticket (message 2)"
+                    variant="ghost"
+                  >
+                    <TicketCheck className="h-4 w-4" />
+                    WhatsApp (2)
                   </GlassButton>
                   <GlassButton href="https://www.maxmatech.com" variant="ghost">
                     maxmatech.com
