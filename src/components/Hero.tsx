@@ -82,7 +82,7 @@ export default function Hero() {
           <div className="glass-chip flex items-center gap-2.5 rounded-full px-4 py-2">
             <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-emerald-400" />
             <span className="font-mono text-[11px] tracking-[0.28em] text-white/65 uppercase">
-              Official Odoo Partner — ERP · AI · Software
+              Your Certified Digital Transformation Partner — ERP · AI · Software
             </span>
           </div>
         </motion.div>

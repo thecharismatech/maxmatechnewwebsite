@@ -22,24 +22,17 @@ app.get('*', (req, res, next) => {
   const accept = req.headers.accept || '';
   const isHtmlNavigation = accept.includes('text/html');
 
-  const url = req.originalUrl || '';
-
-  // If it's a browser navigation, always serve SPA index.html.
-  if (isHtmlNavigation) {
-    return res.sendFile(indexHtml);
-  }
-
-  // For module/script/style requests, avoid MIME issues by not serving index.html.
-  // But let express.static handle real existing assets.
-  if (
-    url.match(/\.(?:js|mjs|cjs|css|map|png|jpg|jpeg|gif|webp|svg|ico|woff2?|ttf|eot)$/i)
-  ) {
+  // Explicitly handle only real browser navigations.
+  // Everything else should be handled by express.static (404 if missing),
+  // to avoid sending index.html as a JS module (wrong MIME type).
+  if (!isHtmlNavigation) {
     return next();
   }
 
-  // For anything else (e.g. direct /path routes), serve SPA entry.
+  // For any HTML navigation, serve SPA entry.
   return res.sendFile(indexHtml);
 });
+
 
 
 const port = process.env.PORT ? Number(process.env.PORT) : 80;

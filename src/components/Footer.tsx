@@ -1,4 +1,4 @@
-import { ArrowUpRight, Clock3, Hexagon, LifeBuoy, Mail, TicketCheck, Zap } from "lucide-react";
+import { ArrowUpRight, Clock3, LifeBuoy, Mail, TicketCheck, Zap } from "lucide-react";
 import { GlassButton, Reveal } from "./ui";
 
 export default function Footer() {
@@ -149,16 +149,35 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-6 border-t border-white/[0.07] pt-8 sm:flex-row">
           <a href="#top" className="flex items-center gap-2.5">
             <span className="relative grid h-8 w-8 place-items-center">
-              <Hexagon className="h-8 w-8 text-violet-400" strokeWidth={1.4} />
-              <span className="font-display absolute text-xs font-semibold text-white">M</span>
+              <img
+                src="/images/logo.png"
+                alt="maxmatech logo"
+                className="h-8 w-8 object-contain"
+              />
             </span>
             <span className="font-display text-sm font-medium tracking-tight text-white/80">
               maxmatech solutions
             </span>
           </a>
           <p className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">
-            Official Odoo Partner
+            Your Certified Digital Transformation Partner
           </p>
+
+          <div className="flex flex-col items-center gap-1 sm:items-end">
+            <a
+              href="tel:01229303030"
+              className="text-[12px] font-medium text-white/40 transition-colors hover:text-white"
+            >
+              01229303030
+            </a>
+            <a
+              href="mailto:info@maxmatech.com"
+              className="text-[12px] font-medium text-white/40 transition-colors hover:text-white"
+            >
+              info@maxmatech.com
+            </a>
+          </div>
+
           <div className="flex items-center gap-6">
             {["Services", "Industries", "Process", "Support"].map((l) => (
               <a

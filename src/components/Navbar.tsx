@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
-import { ArrowUpRight, Hexagon, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "../utils/cn";
 
@@ -39,11 +39,11 @@ export default function Navbar() {
         >
           <a href="#top" className="group flex items-center gap-2.5">
             <span className="relative grid h-9 w-9 place-items-center">
-              <Hexagon
-                className="h-9 w-9 text-violet-400 transition-transform duration-700 group-hover:rotate-90"
-                strokeWidth={1.4}
+              <img
+                src="/images/logo.png"
+                alt="maxmatech logo"
+                className="h-9 w-9 object-contain"
               />
-              <span className="font-display absolute text-sm font-semibold text-white">M</span>
             </span>
             <span className="font-display text-[15px] font-medium tracking-tight text-white">
               maxmatech
@@ -120,9 +120,26 @@ export default function Navbar() {
                   {l.label}
                 </motion.a>
               ))}
+
+              <div className="mt-6 flex flex-col gap-2 text-white/70">
+                <a
+                  href="tel:01229303030"
+                  onClick={() => setOpen(false)}
+                  className="font-mono text-[13px] tracking-[0.02em] underline-offset-4 hover:underline"
+                >
+                  01229303030
+                </a>
+                <a
+                  href="mailto:info@maxmatech.com"
+                  onClick={() => setOpen(false)}
+                  className="font-mono text-[13px] tracking-[0.02em] underline-offset-4 hover:underline"
+                >
+                  info@maxmatech.com
+                </a>
+              </div>
             </div>
             <p className="px-8 pb-10 font-mono text-[11px] tracking-[0.3em] text-white/30 uppercase">
-              Official Odoo Partner
+              Your Certified Digital Transformation Partner
             </p>
           </motion.div>
         )}
