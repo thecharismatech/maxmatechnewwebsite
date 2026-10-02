@@ -49,7 +49,7 @@ export default function Industries() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="industries" className="relative py-28 sm:py-36">
+    <section id="industries" data-scene="industries" className="relative py-28 sm:py-36">
       <div className="absolute top-1/4 -left-40 -z-10 h-[34rem] w-[34rem] rounded-full bg-cyan-500/10 blur-[140px]" />
       <div className="absolute -right-40 bottom-0 -z-10 h-[30rem] w-[30rem] rounded-full bg-violet-600/12 blur-[140px]" />
 

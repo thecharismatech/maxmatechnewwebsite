@@ -1,11 +1,14 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect } from "react";
+import Connect from "./components/Connect";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Industries from "./components/Industries";
 import Navbar from "./components/Navbar";
+import Problem from "./components/Problem";
 import Services from "./components/Services";
+import { refreshImmersiveScene } from "./effects/immersive";
 
 export default function App() {
   const cx = useMotionValue(-400);
@@ -22,9 +25,13 @@ export default function App() {
     return () => window.removeEventListener("pointermove", move);
   }, [cx, cy]);
 
+  useEffect(() => {
+    const id = window.requestAnimationFrame(() => refreshImmersiveScene());
+    return () => window.cancelAnimationFrame(id);
+  }, []);
+
   return (
-    <div className="noise relative min-h-screen bg-[#05050a] text-white antialiased selection:bg-violet-500/40">
-      {/* cursor aura */}
+    <div className="noise relative min-h-screen text-white antialiased selection:bg-violet-500/40">
       <motion.div
         aria-hidden
         style={{ x: sx, y: sy }}
@@ -36,6 +43,8 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Problem />
+        <Connect />
         <Services />
         <Industries />
         <Experience />

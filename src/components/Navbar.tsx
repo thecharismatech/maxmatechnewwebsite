@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { cn } from "../utils/cn";
 
 const links = [
+  { label: "Problem", href: "#problem" },
+  { label: "Connect", href: "#connect" },
   { label: "Services", href: "#services" },
   { label: "Industries", href: "#industries" },
   { label: "Process", href: "#process" },
@@ -50,12 +52,12 @@ export default function Navbar() {
             </span>
           </a>
 
-          <div className="hidden items-center gap-1 md:flex">
+          <div className="hidden items-center gap-0.5 lg:flex">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="rounded-full px-4 py-2 text-[13px] font-medium text-white/55 transition-all duration-300 hover:bg-white/[0.06] hover:text-white"
+                className="link-glow rounded-full px-3 py-2 text-[13px] font-medium text-white/55 transition-colors duration-300 hover:text-white xl:px-4"
               >
                 {l.label}
               </a>
@@ -73,7 +75,7 @@ export default function Navbar() {
             <button
               onClick={() => setOpen(true)}
               aria-label="Open menu"
-              className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-white/80 backdrop-blur-md md:hidden"
+              className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-white/80 backdrop-blur-md lg:hidden"
             >
               <Menu className="h-4.5 w-4.5" />
             </button>

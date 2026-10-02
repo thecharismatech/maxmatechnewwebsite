@@ -76,7 +76,7 @@ export function SectionHeader({
   copy,
   align = "center",
 }: {
-  index: string;
+  index?: string;
   eyebrow: string;
   title: ReactNode;
   copy?: string;
@@ -87,8 +87,12 @@ export function SectionHeader({
     <div className={cn("relative z-10", centered ? "mx-auto max-w-3xl text-center" : "max-w-2xl")}>
       <Reveal>
         <div className={cn("flex items-center gap-3", centered && "justify-center")}>
-          <span className="font-mono text-[11px] tracking-[0.35em] text-white/30">{index}</span>
-          <span className="h-px w-8 bg-gradient-to-r from-violet-400/60 to-transparent" />
+          {index && (
+            <>
+              <span className="font-mono text-[11px] tracking-[0.35em] text-white/30">{index}</span>
+              <span className="h-px w-8 bg-gradient-to-r from-violet-400/60 to-transparent" />
+            </>
+          )}
           <span className="font-mono text-[11px] uppercase tracking-[0.35em] text-violet-300/90">
             {eyebrow}
           </span>

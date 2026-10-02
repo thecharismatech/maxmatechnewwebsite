@@ -90,7 +90,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-28 sm:py-36">
+    <section id="services" data-scene="stack" className="relative py-28 sm:py-36">
       {/* module marquee */}
       <div className="mask-fade-x mb-24 overflow-hidden border-y border-white/[0.06] py-5">
         <div className="animate-marquee flex w-max items-center gap-0">

@@ -5,6 +5,7 @@ import {
   Bot,
   Boxes,
   BrainCircuit,
+  CalendarCheck,
   ChartLine,
   CircleDollarSign,
   LifeBuoy,
@@ -51,6 +52,7 @@ export default function Hero() {
   return (
     <section
       id="top"
+      data-scene="hero"
       onMouseMove={onMove}
       className="relative flex min-h-[100svh] flex-col overflow-hidden pt-36 sm:pt-40"
     >
@@ -112,7 +114,7 @@ export default function Hero() {
             Your journey to the digital world starts here.
           </motion.p>
 
-          <motion.div
+<motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.58, ease }}
@@ -123,7 +125,7 @@ export default function Hero() {
               <ArrowDown className="h-4 w-4" />
             </GlassButton>
             <GlassButton
-              href="https://wa.me/201229303030?text=Hi%20Maxmatech%2C%20I%E2%80%99d%20like%20to%20book%20a%20support%20ticket%20for%20KYC%3A%20%5Bfill%20here%5D.%20My%20business%20need%20is%3A%20%5Bfill%20here%5D.%20Please%20assist.%"
+              href="https://wa.me/201229303030?text=Hi%20Maxmatech%2C%20I%E2%80%99d%20like%20to%20book%20a%20support%20ticket%20for%20KYC%3A%20%5Bfill%20here%5D.%20My%20business%20need%20is%3A%20%5Bfill%20here%5D.%20Please%20assist.%20"
               variant="ghost"
             >
               <LifeBuoy className="h-4 w-4 text-cyan-300" />
@@ -136,6 +138,29 @@ export default function Hero() {
               <LifeBuoy className="h-4 w-4 text-cyan-300" />
               Support Ticket
             </GlassButton>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 26 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.72, ease }}
+            className="mt-12 flex flex-col items-center"
+          >
+            <div className="relative">
+              <span className="animate-pulse-ring absolute -inset-4 rounded-[2.25rem] border border-violet-300/35" />
+              <span className="animate-pulse-ring absolute -inset-4 rounded-[2.25rem] border border-cyan-300/25 [animation-delay:1.4s]" />
+              <GlassButton
+                href="https://wa.me/201229303030?text=Hi%20Maxmatech%2C%20I%27d%20like%20to%20book%20a%20technical%20discovery%20call.%20My%20business%20need%20is%3A%20%5Bfill%20here%5D.%20Preferred%20time%3A%20%5Bfill%20here%5D.%20Thanks%21"
+                className="border-white/25 bg-white/[0.12] px-9 py-5 text-[15px] shadow-[0_0_70px_-16px_rgba(139,92,246,0.85)] hover:shadow-[0_0_90px_-10px_rgba(139,92,246,0.95)]"
+              >
+                <CalendarCheck className="h-5 w-5 text-violet-200" />
+                Book a technical discovery call
+                <ArrowUpRight className="h-4.5 w-4.5" />
+              </GlassButton>
+            </div>
+            <p className="mt-5 font-mono text-[10px] tracking-[0.22em] text-white/35 uppercase">
+              no commitment · 30 minutes · mapped to your operation
+            </p>
           </motion.div>
         </div>
       </div>
@@ -274,7 +299,7 @@ export default function Hero() {
 
         {/* scroll cue */}
         <motion.a
-          href="#services"
+          href="#problem"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.9, duration: 1 }}

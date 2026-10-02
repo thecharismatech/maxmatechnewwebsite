@@ -1,5 +1,30 @@
-import { Compass, Gauge, Infinity as InfinityIcon, Wrench, Zap } from "lucide-react";
+import {
+  CheckCircle2,
+  Compass,
+  Gauge,
+  Infinity as InfinityIcon,
+  Route,
+  Timer,
+  Users,
+  Warehouse,
+  Wrench,
+  Zap,
+} from "lucide-react";
 import { Counter, Reveal, SectionHeader, SpotlightCard } from "./ui";
+
+const baselines = [
+  { icon: Timer, k: "Order-to-cash", v: "cycle time", c: "text-violet-300" },
+  { icon: Warehouse, k: "Stock accuracy", v: "across branches", c: "text-cyan-300" },
+  { icon: Users, k: "Admin effort", v: "manual hours", c: "text-fuchsia-300" },
+  { icon: Gauge, k: "Reporting", v: "data latency", c: "text-emerald-300" },
+];
+
+const supportLoop = [
+  { icon: Zap, k: "Raise", v: "Portal · email · app" },
+  { icon: Route, k: "Triage", v: "Priority routed automatically" },
+  { icon: Wrench, k: "Resolve", v: "Engineer assigned and working" },
+  { icon: CheckCircle2, k: "Verify", v: "Confirmed, then closed" },
+];
 
 const steps = [
   {
@@ -37,7 +62,7 @@ const metrics = [
 
 export default function Experience() {
   return (
-    <section id="process" className="relative py-28 sm:py-36">
+    <section id="process" data-scene="proof" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeader
           index="03"
@@ -107,6 +132,71 @@ export default function Experience() {
             </div>
           </div>
         </Reveal>
+
+        {/* evidence + always-on loop */}
+        <div className="mt-4 grid gap-4 lg:grid-cols-[1.15fr_1fr]">
+          <Reveal delay={0.06}>
+            <div className="glass-panel panel-edge h-full rounded-[2rem] p-7 sm:p-9">
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-[10px] tracking-[0.3em] text-violet-300/90 uppercase">
+                  Social proof
+                </span>
+                <span className="h-px flex-1 bg-gradient-to-r from-violet-400/40 to-transparent" />
+              </div>
+              <h3 className="font-display mt-5 text-2xl font-medium tracking-tight text-white sm:text-3xl">
+                What the <span className="text-gradient">+77%</span> is actually measured on
+              </h3>
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/45">
+                Every deployment is baselined against the process you run today, then re-measured
+                after go-live. No vanity metrics — four operational baselines, signed off with you.
+              </p>
+
+              <div className="mt-8 grid grid-cols-2 gap-3">
+                {baselines.map((b) => (
+                  <div key={b.k} className="glass-chip rounded-2xl px-4 py-4">
+                    <b.icon className={`h-4 w-4 ${b.c}`} strokeWidth={1.7} />
+                    <p className="mt-2.5 text-[13px] font-semibold text-white">{b.k}</p>
+                    <p className="mt-0.5 text-[11px] text-white/40">{b.v}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.12}>
+            <div className="glass-deep h-full rounded-[2rem] p-7 sm:p-9">
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-[10px] tracking-[0.3em] text-cyan-300/90 uppercase">
+                  Always-on support
+                </span>
+                <span className="h-px flex-1 bg-gradient-to-r from-cyan-400/40 to-transparent" />
+                <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              </div>
+
+              <div className="scan-rail relative mt-7 space-y-3">
+                {supportLoop.map((s, i) => (
+                  <div
+                    key={s.k}
+                    className="flex items-center gap-4 rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-3.5"
+                  >
+                    <span className="font-mono text-[10px] tracking-[0.2em] text-white/25">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <s.icon className="h-4 w-4 shrink-0 text-cyan-300" strokeWidth={1.7} />
+                    <div className="min-w-0">
+                      <p className="text-[13px] font-semibold text-white">{s.k}</p>
+                      <p className="text-[11px] text-white/40">{s.v}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="mt-6 font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">
+                24/7 · first response &lt; 2 hours · defined path to resolution
+              </p>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

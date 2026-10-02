@@ -1,11 +1,19 @@
-import { ArrowUpRight, Clock3, LifeBuoy, Mail, TicketCheck, Zap } from "lucide-react";
+import {
+  ArrowUpRight,
+  CalendarCheck,
+  Clock3,
+  LifeBuoy,
+  Mail,
+  TicketCheck,
+  Zap,
+} from "lucide-react";
 import { GlassButton, Reveal } from "./ui";
 
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden pt-28 sm:pt-36">
       {/* ------- support ------- */}
-      <section id="support" className="relative">
+      <section id="support" data-scene="support" className="relative">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div>
@@ -113,7 +121,7 @@ export default function Footer() {
       </section>
 
       {/* ------- contact CTA ------- */}
-      <section id="contact" className="relative mt-28 sm:mt-36">
+      <section id="contact" data-scene="cta" className="relative mt-28 sm:mt-36">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <div className="glass-deep relative overflow-hidden rounded-[2.5rem] px-6 py-20 text-center sm:px-12 sm:py-28">
@@ -142,7 +150,14 @@ export default function Footer() {
                 solution tailored for you.
               </p>
               <div className="relative mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <GlassButton href="https://www.maxmatech.com/industrialsolutions">
+                <GlassButton
+                  href="https://wa.me/201229303030?text=Hi%20Maxmatech%2C%20I%27d%20like%20to%20book%20a%20technical%20discovery%20call.%20My%20business%20need%20is%3A%20%5Bfill%20here%5D.%20Preferred%20time%3A%20%5Bfill%20here%5D.%20Thanks%21"
+                  className="border-white/25 bg-white/[0.12] px-8 py-4 text-[15px] shadow-[0_0_60px_-14px_rgba(139,92,246,0.8)]"
+                >
+                  <CalendarCheck className="h-4.5 w-4.5 text-violet-200" />
+                  Book a technical discovery call
+                </GlassButton>
+                <GlassButton href="https://www.maxmatech.com/industrialsolutions" variant="ghost">
                   Let's do it
                   <ArrowUpRight className="h-4 w-4" />
                 </GlassButton>
@@ -150,6 +165,9 @@ export default function Footer() {
                   Back to top
                 </GlassButton>
               </div>
+              <p className="relative mt-6 font-mono text-[10px] tracking-[0.22em] text-white/30 uppercase">
+                step 01 · map your operation · step 02 · deploy · step 03 · scale
+              </p>
             </div>
           </Reveal>
         </div>
