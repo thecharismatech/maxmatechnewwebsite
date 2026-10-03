@@ -1,13 +1,21 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect } from "react";
 import Connect from "./components/Connect";
+import Engagement from "./components/Engagement";
 import Experience from "./components/Experience";
+import Faq from "./components/Faq";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Industries from "./components/Industries";
 import Navbar from "./components/Navbar";
+import Order from "./components/Order";
+import Outcomes from "./components/Outcomes";
 import Problem from "./components/Problem";
+import Programme from "./components/Programme";
+import Scope from "./components/Scope";
 import Services from "./components/Services";
+import Stack from "./components/Stack";
+import Statement from "./components/Statement";
 import { refreshImmersiveScene } from "./effects/immersive";
 
 export default function App() {
@@ -43,11 +51,19 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Statement />
         <Problem />
+        <Order />
         <Connect />
         <Services />
         <Industries />
+        <Programme />
+        <Outcomes />
+        <Scope />
+        <Stack />
         <Experience />
+        <Engagement />
+        <Faq />
       </main>
       <Footer />
     </div>

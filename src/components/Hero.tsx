@@ -15,7 +15,7 @@ import {
   Warehouse,
 } from "lucide-react";
 import type { MouseEvent } from "react";
-import { GlassButton } from "./ui";
+import { RollButton } from "./ui";
 
 const modules = [
   { icon: Users, label: "CRM", active: false },
@@ -83,19 +83,19 @@ export default function Hero() {
         >
           <div className="glass-chip flex items-center gap-2.5 rounded-full px-4 py-2">
             <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            <span className="font-mono text-[11px] tracking-[0.28em] text-white/65 uppercase">
-              Your Certified Digital Transformation Partner — ERP · AI · Software
+            <span className="eyebrow text-white/62">
+              Certified Digital Transformation Partner — ERP · AI · Software
             </span>
           </div>
         </motion.div>
 
         {/* headline */}
-        <div className="mt-9 text-center">
+        <div className="mt-10 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 48, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1.1, delay: 0.28, ease }}
-            className="font-display mx-auto max-w-6xl text-[clamp(3.2rem,10.5vw,8.5rem)] leading-[0.92] font-medium tracking-[-0.04em] text-white uppercase"
+            className="display mx-auto max-w-[19ch] text-white"
           >
             Maximizing
             <br />
@@ -107,61 +107,47 @@ export default function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.45, ease }}
-            className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-white/55 sm:text-lg"
+            className="lede mx-auto mt-9 max-w-xl"
           >
             We engineer high-performance <span className="text-white/90">Odoo ERP</span> systems &{" "}
             <span className="text-white/90">AI automations</span> that scale your operations.
             Your journey to the digital world starts here.
           </motion.p>
 
-<motion.div
+          <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.58, ease }}
-            className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+            className="mt-11 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
-            <GlassButton href="#services">
-              Explore the stack
-              <ArrowDown className="h-4 w-4" />
-            </GlassButton>
-            <GlassButton
+            <RollButton
+              label="Explore the stack"
+              href="#services"
+              tone="solid"
+              icon={<ArrowDown className="h-4 w-4" />}
+            />
+            <RollButton
+              label="Book a technical discovery call"
+              href="https://wa.me/201229303030?text=Hi%20Maxmatech%2C%20I%27d%20like%20to%20book%20a%20technical%20discovery%20call.%20My%20business%20need%20is%3A%20%5Bfill%20here%5D.%20Preferred%20time%3A%20%5Bfill%20here%5D.%20Thanks%21"
+              tone="accent"
+              icon={<CalendarCheck className="h-4 w-4 text-violet-200" />}
+            />
+            <RollButton
+              label="Book your support ticket"
               href="https://wa.me/201229303030?text=Hi%20Maxmatech%2C%20I%E2%80%99d%20like%20to%20book%20a%20support%20ticket%20for%20KYC%3A%20%5Bfill%20here%5D.%20My%20business%20need%20is%3A%20%5Bfill%20here%5D.%20Please%20assist.%20"
-              variant="ghost"
-            >
-              <LifeBuoy className="h-4 w-4 text-cyan-300" />
-              Book your ticket
-            </GlassButton>
-            <GlassButton
-              href="https://wa.me/201229303030?text=Hello%20Maxmatech%2C%20I%E2%80%99d%20like%20to%20schedule%20support%20for%20KYC%3A%20%5Bfill%20here%5D.%20Preferred%20time%3A%20%5Bfill%20here%5D.%20Thanks"
-              variant="ghost"
-            >
-              <LifeBuoy className="h-4 w-4 text-cyan-300" />
-              Support Ticket
-            </GlassButton>
+              tone="ghost"
+              icon={<LifeBuoy className="h-4 w-4 text-cyan-300" />}
+            />
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 26 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.72, ease }}
-            className="mt-12 flex flex-col items-center"
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.7 }}
+            className="mt-6 font-mono text-[10px] tracking-[0.22em] text-white/66 uppercase"
           >
-            <div className="relative">
-              <span className="animate-pulse-ring absolute -inset-4 rounded-[2.25rem] border border-violet-300/35" />
-              <span className="animate-pulse-ring absolute -inset-4 rounded-[2.25rem] border border-cyan-300/25 [animation-delay:1.4s]" />
-              <GlassButton
-                href="https://wa.me/201229303030?text=Hi%20Maxmatech%2C%20I%27d%20like%20to%20book%20a%20technical%20discovery%20call.%20My%20business%20need%20is%3A%20%5Bfill%20here%5D.%20Preferred%20time%3A%20%5Bfill%20here%5D.%20Thanks%21"
-                className="border-white/25 bg-white/[0.12] px-9 py-5 text-[15px] shadow-[0_0_70px_-16px_rgba(139,92,246,0.85)] hover:shadow-[0_0_90px_-10px_rgba(139,92,246,0.95)]"
-              >
-                <CalendarCheck className="h-5 w-5 text-violet-200" />
-                Book a technical discovery call
-                <ArrowUpRight className="h-4.5 w-4.5" />
-              </GlassButton>
-            </div>
-            <p className="mt-5 font-mono text-[10px] tracking-[0.22em] text-white/35 uppercase">
-              no commitment · 30 minutes · mapped to your operation
-            </p>
-          </motion.div>
+            no commitment · 30 minutes · mapped to your operation
+          </motion.p>
         </div>
       </div>
 
@@ -179,13 +165,13 @@ export default function Hero() {
 
           <div className="glass-deep relative overflow-hidden rounded-[1.75rem]">
             {/* window chrome */}
-            <div className="flex items-center justify-between border-b border-white/[0.07] px-6 py-4">
+            <div className="flex items-center justify-between border-b border-white/[0.11] px-6 py-4">
               <div className="flex items-center gap-2">
                 <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
                 <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
                 <span className="h-2.5 w-2.5 rounded-full bg-violet-400/70" />
               </div>
-              <span className="font-mono text-[10px] tracking-[0.3em] text-white/35 uppercase">
+              <span className="font-mono text-[10px] tracking-[0.3em] text-white/52 uppercase">
                 maxmatech os — unified operations
               </span>
               <ShieldCheck className="h-4 w-4 text-emerald-400/80" />
@@ -193,8 +179,8 @@ export default function Hero() {
 
             <div className="grid md:grid-cols-[220px_1fr]">
               {/* modules rail */}
-              <div className="hidden border-r border-white/[0.07] p-5 md:block">
-                <p className="mb-4 font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">
+              <div className="hidden border-r border-white/[0.11] p-5 md:block">
+                <p className="mb-4 font-mono text-[10px] tracking-[0.3em] text-white/48 uppercase">
                   Modules
                 </p>
                 <div className="space-y-1.5">
@@ -204,7 +190,7 @@ export default function Hero() {
                       className={
                         m.active
                           ? "flex items-center gap-3 rounded-xl border border-violet-300/25 bg-violet-400/10 px-3.5 py-2.5 text-[13px] font-medium text-white"
-                          : "flex items-center gap-3 rounded-xl border border-transparent px-3.5 py-2.5 text-[13px] text-white/45 transition-colors hover:bg-white/[0.04] hover:text-white/80"
+                          : "flex items-center gap-3 rounded-xl border border-transparent px-3.5 py-2.5 text-[13px] text-white/62 transition-colors hover:bg-white/[0.04] hover:text-white/80"
                       }
                     >
                       <m.icon className={`h-4 w-4 ${m.active ? "text-violet-300" : ""}`} />
@@ -221,7 +207,7 @@ export default function Hero() {
               <div className="p-6 sm:p-8">
                 <div className="flex flex-wrap items-end justify-between gap-4">
                   <div>
-                    <p className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">
+                    <p className="font-mono text-[10px] tracking-[0.3em] text-white/48 uppercase">
                       Operational throughput
                     </p>
                     <p className="font-display mt-2 text-4xl font-medium tracking-tight text-white sm:text-5xl">
@@ -261,7 +247,7 @@ export default function Hero() {
                     <div key={s.k} className="glass-chip rounded-2xl px-4 py-3.5">
                       <s.icon className={`h-4 w-4 ${s.c}`} />
                       <p className="mt-2 text-[13px] font-semibold text-white">{s.v}</p>
-                      <p className="text-[11px] text-white/40">{s.k}</p>
+                      <p className="text-[11px] text-white/58">{s.k}</p>
                     </div>
                   ))}
                 </div>
@@ -279,7 +265,7 @@ export default function Hero() {
             </span>
             <div>
               <p className="text-[13px] font-semibold text-white">AI Supercharged</p>
-              <p className="text-[11px] text-white/45">Odoo ecosystem, automated</p>
+              <p className="text-[11px] text-white/62">Odoo ecosystem, automated</p>
             </div>
           </motion.div>
 
@@ -292,7 +278,7 @@ export default function Hero() {
             </span>
             <div>
               <p className="text-[13px] font-semibold text-white">Tailored for you</p>
-              <p className="text-[11px] text-white/45">Built around your workflow</p>
+              <p className="text-[11px] text-white/62">Built around your workflow</p>
             </div>
           </motion.div>
         </motion.div>
@@ -305,7 +291,7 @@ export default function Hero() {
           transition={{ delay: 1.9, duration: 1 }}
           className="group mx-auto mt-14 flex w-fit flex-col items-center gap-2"
         >
-          <span className="font-mono text-[10px] tracking-[0.4em] text-white/30 uppercase">
+          <span className="font-mono text-[10px] tracking-[0.4em] text-white/48 uppercase">
             Scroll
           </span>
           <span className="glass-chip grid h-9 w-9 place-items-center rounded-full">

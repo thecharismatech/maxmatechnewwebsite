@@ -70,7 +70,7 @@ export default function Connect() {
           <Reveal delay={0.05}>
             <div className="glass-panel panel-edge relative h-full overflow-hidden rounded-[2rem] p-7 sm:p-9">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] tracking-[0.3em] text-white/35 uppercase">
+                <span className="font-mono text-[10px] tracking-[0.3em] text-white/52 uppercase">
                   Odoo core — shared record
                 </span>
                 <span className="flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1 font-mono text-[10px] tracking-[0.2em] text-emerald-300 uppercase">
@@ -128,7 +128,7 @@ export default function Connect() {
                 })}
               </div>
 
-              <div className="relative mt-6 flex items-center gap-2.5 rounded-xl border border-white/[0.07] bg-white/[0.02] px-4 py-3">
+              <div className="relative mt-6 flex items-center gap-2.5 rounded-xl border border-white/[0.11] bg-white/[0.02] px-4 py-3">
                 <Sparkles className="h-4 w-4 shrink-0 text-cyan-300" />
                 <p className="shimmer-text font-mono text-[10px] font-medium tracking-[0.16em] uppercase">
                   snapped into place · 6 modules · 1 database
@@ -151,7 +151,7 @@ export default function Connect() {
                     <h3 className="font-display text-[15px] font-medium tracking-tight text-white">
                       {a.title}
                     </h3>
-                    <p className="mt-2 text-[13px] leading-relaxed text-white/45">{a.copy}</p>
+                    <p className="mt-2 text-[13px] leading-relaxed text-white/62">{a.copy}</p>
                   </div>
                   <GitBranch className="mt-1 h-4 w-4 shrink-0 text-white/15 transition-colors duration-300 group-hover:text-violet-300" />
                 </div>
@@ -170,7 +170,7 @@ export default function Connect() {
                       <p className="text-[14px] font-semibold text-white">
                         See it mapped to your operation
                       </p>
-                      <p className="text-[12px] text-white/40">
+                      <p className="text-[12px] text-white/58">
                         A technical discovery call — no commitment, just the blueprint.
                       </p>
                     </div>

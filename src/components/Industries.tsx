@@ -73,7 +73,7 @@ export default function Industries() {
             <Reveal delay={0.2}>
               <div className="glass-chip mt-10 hidden w-fit items-center gap-4 rounded-2xl px-5 py-4 lg:flex">
                 <span className="font-display text-4xl font-medium text-white">06</span>
-                <span className="text-[13px] leading-snug text-white/50">
+                <span className="text-[13px] leading-snug text-white/66">
                   industry verticals,
                   <br />
                   one tailored platform
@@ -129,7 +129,7 @@ export default function Industries() {
                           "ml-auto h-5 w-5 shrink-0 transition-all duration-500",
                           isActive
                             ? "rotate-0 text-cyan-300"
-                            : "rotate-45 text-white/20 group-hover:text-white/40",
+                            : "rotate-45 text-white/20 group-hover:text-white/58",
                         )}
                       />
                     </div>
@@ -143,7 +143,7 @@ export default function Industries() {
                           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                           className="overflow-hidden"
                         >
-                          <p className="px-6 pb-6 pl-[4.75rem] text-sm leading-relaxed text-white/50 sm:px-8 sm:pl-[6rem]">
+                          <p className="px-6 pb-6 pl-[4.75rem] text-sm leading-relaxed text-white/66 sm:px-8 sm:pl-[6rem]">
                             {ind.copy}
                           </p>
                         </motion.div>

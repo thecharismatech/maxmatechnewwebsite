@@ -37,8 +37,8 @@ const SPACING = 2.45;
 const LATTICE_CENTER = new THREE.Vector3(0, 0.4, 0);
 const MODULE_RING = 13.4;
 
-const VIOLET = new THREE.Color("#8b5cf6");
-const CYAN = new THREE.Color("#22d3ee");
+const VIOLET = new THREE.Color("#4b3c86");
+const CYAN = new THREE.Color("#175e6d");
 const FUCHSIA = new THREE.Color("#d946ef");
 const PALETTE = [VIOLET, CYAN, FUCHSIA];
 
@@ -340,21 +340,21 @@ export class ThreeScene {
   }
 
   private buildLights(): void {
-    this.root.add(new THREE.AmbientLight(0x2b2b4a, 1.6));
+    this.root.add(new THREE.AmbientLight(0x1c1c30, 1.35));
 
-    const key = new THREE.DirectionalLight(0xffffff, 2.1);
+    const key = new THREE.DirectionalLight(0xffffff, 1.5);
     key.position.set(6, 11, 9);
     this.root.add(key);
 
-    const fill = new THREE.DirectionalLight(0x8b5cf6, 1.5);
+    const fill = new THREE.DirectionalLight(0x4b3c86, 1.1);
     fill.position.set(-9, -4, 6);
     this.root.add(fill);
 
-    this.linkLight = new THREE.PointLight(0x8b5cf6, 900, 70, 2);
+    this.linkLight = new THREE.PointLight(0x4b3c86, 600, 70, 2);
     this.linkLight.position.set(-11, 6, 7);
     this.root.add(this.linkLight);
 
-    this.linkRim = new THREE.PointLight(0x22d3ee, 700, 70, 2);
+    this.linkRim = new THREE.PointLight(0x175e6d, 460, 70, 2);
     this.linkRim.position.set(11, -5, 6);
     this.root.add(this.linkRim);
   }

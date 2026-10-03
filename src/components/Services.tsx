@@ -9,7 +9,7 @@ import {
   Palette,
   ShieldCheck,
 } from "lucide-react";
-import { Reveal, SectionHeader, SpotlightCard } from "./ui";
+import { Reveal, SectionHeader } from "./ui";
 
 const stack = [
   "Odoo ERP",
@@ -92,13 +92,13 @@ export default function Services() {
   return (
     <section id="services" data-scene="stack" className="relative py-28 sm:py-36">
       {/* module marquee */}
-      <div className="mask-fade-x mb-24 overflow-hidden border-y border-white/[0.06] py-5">
+      <div className="mask-fade-x mb-24 overflow-hidden border-y border-white/[0.13] py-5">
         <div className="animate-marquee flex w-max items-center gap-0">
           {[...stack, ...stack].map((item, i) => (
             <span key={i} className="flex items-center">
               <span
                 className={`font-display text-sm tracking-[0.3em] uppercase ${
-                  i % 2 === 0 ? "text-white/45" : "text-white/20"
+                  i % 2 === 0 ? "text-white/62" : "text-white/20"
                 }`}
               >
                 {item}
@@ -113,47 +113,77 @@ export default function Services() {
         <SectionHeader
           index="01"
           eyebrow="The Stack"
+          align="left"
           title={
             <>
-              One partner.
+              Eight capabilities.
               <br />
-              <span className="serif-accent text-gradient tracking-normal">Every capability.</span>
+              <span className="serif-accent text-gradient tracking-normal normal-case">
+                One operator.
+              </span>
             </>
           }
-          copy="From prospecting and demos to deployment and maintenance — we guide you through the competition race with tailored solutions across your entire digital operation."
+          copy="From prospecting and demos to deployment and maintenance — one team across your entire digital operation, so nothing falls between vendors."
         />
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 border-t border-white/[0.13]">
           {services.map((s, i) => (
-            <Reveal key={s.title} delay={(i % 3) * 0.08} className={s.span}>
-              <SpotlightCard
-                glow={s.glow}
-                className="flex h-full flex-col justify-between rounded-3xl p-7 sm:p-8"
-              >
-                <div>
-                  <div className="flex items-start justify-between">
-                    <span className="glass-chip grid h-12 w-12 place-items-center rounded-2xl">
-                      <s.icon className="h-5 w-5 text-white/85" strokeWidth={1.6} />
-                    </span>
-                    {s.tag && (
-                      <span className="rounded-full border border-violet-300/30 bg-violet-400/10 px-3 py-1 font-mono text-[10px] tracking-[0.25em] text-violet-200 uppercase">
-                        {s.tag}
+            <Reveal key={s.title} delay={0.04}>
+              <div className="group relative border-b border-white/[0.13]">
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{
+                    background: `linear-gradient(90deg, ${s.glow.replace(/[\d.]+\)$/, "0.14)")}, transparent 62%)`,
+                  }}
+                />
+                <div className="relative flex items-start gap-5 py-7 sm:gap-8 sm:py-9">
+                  <span className="font-display w-12 shrink-0 text-[2.6rem] leading-none font-medium tracking-tighter text-white/12 transition-colors duration-500 group-hover:text-white/62 sm:w-16 sm:text-[3.4rem]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="glass-chip grid h-9 w-9 shrink-0 place-items-center rounded-xl">
+                        <s.icon className="h-4 w-4 text-white/80" strokeWidth={1.6} />
                       </span>
-                    )}
+                      <h3 className="font-display text-xl font-medium tracking-tight text-white transition-colors duration-400 group-hover:text-white/70 sm:text-[1.6rem]">
+                        {s.title}
+                      </h3>
+                      {s.tag && (
+                        <span className="rounded-full border border-violet-300/30 bg-violet-400/10 px-3 py-1 font-mono text-[10px] tracking-[0.25em] text-violet-200 uppercase">
+                          {s.tag}
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-3 max-w-2xl text-[14.5px] leading-relaxed text-white/62">
+                      {s.copy}
+                    </p>
                   </div>
-                  <h3 className="font-display mt-6 text-xl font-medium tracking-tight text-white sm:text-[1.35rem]">
-                    {s.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/45">{s.copy}</p>
+
+                  <span className="mt-2 hidden shrink-0 items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-white/28 uppercase transition-colors duration-400 group-hover:text-white/80 sm:flex">
+                    Deploy
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-400 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </span>
                 </div>
-                <div className="mt-7 flex items-center gap-2 text-[12px] font-medium text-white/30 transition-colors duration-300 group-hover:text-white/80">
-                  <span className="font-mono tracking-[0.2em] uppercase">Deploy</span>
-                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </div>
-              </SpotlightCard>
+              </div>
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.1}>
+          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+            {[
+              { k: "Modules live on day one", v: "Scoped to what you actually use" },
+              { k: "Automation included", v: "Not an upsell, not a phase two" },
+              { k: "You own the stack", v: "Database, code and documentation" },
+            ].map((n) => (
+              <div key={n.k} className="glass-chip rounded-2xl px-5 py-4">
+                <p className="text-[13.5px] font-semibold text-white">{n.k}</p>
+                <p className="mt-1 text-[12.5px] text-white/60">{n.v}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

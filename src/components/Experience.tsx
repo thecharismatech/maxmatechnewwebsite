@@ -96,7 +96,7 @@ export default function Experience() {
                   <h3 className="font-display mt-8 text-xl font-medium tracking-tight text-white">
                     {s.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/45">{s.copy}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-white/62">{s.copy}</p>
                 </SpotlightCard>
               </Reveal>
             ))}
@@ -117,16 +117,16 @@ export default function Experience() {
                     <Counter value={m.value} suffix={m.suffix} />
                   </p>
                   <p className="mt-3 text-sm font-semibold text-white/80">{m.label}</p>
-                  <p className="mt-1 font-mono text-[10px] tracking-[0.25em] text-white/30 uppercase">
+                  <p className="mt-1 font-mono text-[10px] tracking-[0.25em] text-white/48 uppercase">
                     {m.hint}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="flex items-center justify-center gap-3 border-t border-white/[0.06] px-6 py-5">
+            <div className="flex items-center justify-center gap-3 border-t border-white/[0.13] px-6 py-5">
               <InfinityIcon className="h-4 w-4 text-violet-300" />
-              <p className="font-mono text-[10px] tracking-[0.3em] text-white/40 uppercase">
+              <p className="font-mono text-[10px] tracking-[0.3em] text-white/58 uppercase">
                 Your journey to the digital world — without endpoints
               </p>
             </div>
@@ -146,7 +146,7 @@ export default function Experience() {
               <h3 className="font-display mt-5 text-2xl font-medium tracking-tight text-white sm:text-3xl">
                 What the <span className="text-gradient">+77%</span> is actually measured on
               </h3>
-              <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/45">
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/62">
                 Every deployment is baselined against the process you run today, then re-measured
                 after go-live. No vanity metrics — four operational baselines, signed off with you.
               </p>
@@ -156,7 +156,7 @@ export default function Experience() {
                   <div key={b.k} className="glass-chip rounded-2xl px-4 py-4">
                     <b.icon className={`h-4 w-4 ${b.c}`} strokeWidth={1.7} />
                     <p className="mt-2.5 text-[13px] font-semibold text-white">{b.k}</p>
-                    <p className="mt-0.5 text-[11px] text-white/40">{b.v}</p>
+                    <p className="mt-0.5 text-[11px] text-white/58">{b.v}</p>
                   </div>
                 ))}
               </div>
@@ -177,7 +177,7 @@ export default function Experience() {
                 {supportLoop.map((s, i) => (
                   <div
                     key={s.k}
-                    className="flex items-center gap-4 rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-3.5"
+                    className="flex items-center gap-4 rounded-xl border border-white/[0.13] bg-white/[0.02] px-4 py-3.5"
                   >
                     <span className="font-mono text-[10px] tracking-[0.2em] text-white/25">
                       {String(i + 1).padStart(2, "0")}
@@ -185,13 +185,13 @@ export default function Experience() {
                     <s.icon className="h-4 w-4 shrink-0 text-cyan-300" strokeWidth={1.7} />
                     <div className="min-w-0">
                       <p className="text-[13px] font-semibold text-white">{s.k}</p>
-                      <p className="text-[11px] text-white/40">{s.v}</p>
+                      <p className="text-[11px] text-white/58">{s.v}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <p className="mt-6 font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">
+              <p className="mt-6 font-mono text-[10px] tracking-[0.2em] text-white/52 uppercase">
                 24/7 · first response &lt; 2 hours · defined path to resolution
               </p>
             </div>

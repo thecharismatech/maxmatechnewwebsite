@@ -1,13 +1,12 @@
 import {
   ArrowUpRight,
-  CalendarCheck,
   Clock3,
   LifeBuoy,
   Mail,
   TicketCheck,
   Zap,
 } from "lucide-react";
-import { GlassButton, Reveal } from "./ui";
+import { GlassButton, Reveal, RollButton } from "./ui";
 
 export default function Footer() {
   return (
@@ -19,7 +18,7 @@ export default function Footer() {
             <div>
               <Reveal>
                 <div className="flex items-center gap-3">
-                  <span className="font-mono text-[11px] tracking-[0.35em] text-white/30">04</span>
+                  <span className="font-mono text-[11px] tracking-[0.35em] text-white/48">04</span>
                   <span className="h-px w-8 bg-gradient-to-r from-cyan-300/60 to-transparent" />
                   <span className="font-mono text-[11px] tracking-[0.35em] text-cyan-300/90 uppercase">
                     Always-on support
@@ -34,7 +33,7 @@ export default function Footer() {
                 </h2>
               </Reveal>
               <Reveal delay={0.16}>
-                <p className="mt-6 max-w-md text-base leading-relaxed text-white/50 sm:text-lg">
+                <p className="mt-6 max-w-md text-base leading-relaxed text-white/66 sm:text-lg">
                   Issues grow when they wait. Our ticketing system makes it quick and effortless to
                   fix whatever happens in your system — so small sparks never become fires.
                 </p>
@@ -75,7 +74,7 @@ export default function Footer() {
                     </span>
                     <div>
                       <p className="text-sm font-semibold text-white">Ticket #MAX-2077</p>
-                      <p className="font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">
+                      <p className="font-mono text-[10px] tracking-[0.2em] text-white/52 uppercase">
                         ERP · automation
                       </p>
                     </div>
@@ -96,7 +95,7 @@ export default function Footer() {
                       key={r.k}
                       className="glass-chip flex items-center justify-between rounded-xl px-4 py-3.5"
                     >
-                      <span className="flex items-center gap-2.5 text-[13px] text-white/50">
+                      <span className="flex items-center gap-2.5 text-[13px] text-white/66">
                         <r.icon className={`h-4 w-4 ${r.c}`} />
                         {r.k}
                       </span>
@@ -106,7 +105,7 @@ export default function Footer() {
                 </div>
 
                 <div className="mt-7">
-                  <div className="mb-2 flex justify-between font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">
+                  <div className="mb-2 flex justify-between font-mono text-[10px] tracking-[0.2em] text-white/52 uppercase">
                     <span>Resolution progress</span>
                     <span className="text-cyan-300">82%</span>
                   </div>
@@ -135,47 +134,65 @@ export default function Footer() {
                 className="blend-screen animate-float-slower pointer-events-none absolute -top-24 -right-20 w-80 opacity-60 select-none sm:w-[26rem]"
               />
 
-              <p className="relative font-mono text-[11px] tracking-[0.4em] text-white/40 uppercase">
-                05 — Ready when you are
-              </p>
-              <h2 className="font-display relative mx-auto mt-7 max-w-4xl text-[clamp(2.6rem,7vw,5.5rem)] leading-[0.95] font-medium tracking-[-0.03em] text-white uppercase">
-                Let's maximize
+              <p className="relative eyebrow text-white/58">Ready when you are</p>
+
+              <h2 className="display relative mx-auto mt-8 max-w-6xl text-white">
+                Let&apos;s maximize
                 <br />
                 <span className="serif-accent text-gradient tracking-normal normal-case">
                   your tech.
                 </span>
               </h2>
-              <p className="relative mx-auto mt-7 max-w-lg text-base leading-relaxed text-white/50">
+
+              <p className="lede relative mx-auto mt-8 max-w-lg">
                 Explore further with Maxmatech — and take your business to the next level with a
                 solution tailored for you.
               </p>
-              <div className="relative mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <GlassButton
+
+              <div className="relative mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <RollButton
+                  label="Book a technical discovery call"
                   href="https://wa.me/201229303030?text=Hi%20Maxmatech%2C%20I%27d%20like%20to%20book%20a%20technical%20discovery%20call.%20My%20business%20need%20is%3A%20%5Bfill%20here%5D.%20Preferred%20time%3A%20%5Bfill%20here%5D.%20Thanks%21"
-                  className="border-white/25 bg-white/[0.12] px-8 py-4 text-[15px] shadow-[0_0_60px_-14px_rgba(139,92,246,0.8)]"
-                >
-                  <CalendarCheck className="h-4.5 w-4.5 text-violet-200" />
-                  Book a technical discovery call
-                </GlassButton>
-                <GlassButton href="https://www.maxmatech.com/industrialsolutions" variant="ghost">
-                  Let's do it
-                  <ArrowUpRight className="h-4 w-4" />
-                </GlassButton>
-                <GlassButton href="#top" variant="ghost">
-                  Back to top
-                </GlassButton>
+                  tone="solid"
+                  icon={<ArrowUpRight className="h-4 w-4" />}
+                />
+                <RollButton
+                  label="Let's do it"
+                  href="https://www.maxmatech.com/industrialsolutions"
+                  tone="ghost"
+                  icon={<ArrowUpRight className="h-4 w-4" />}
+                />
+                <RollButton label="Back to top" href="#top" tone="ghost" />
               </div>
-              <p className="relative mt-6 font-mono text-[10px] tracking-[0.22em] text-white/30 uppercase">
+
+              <p className="relative mt-7 font-mono text-[10px] tracking-[0.22em] text-white/48 uppercase">
                 step 01 · map your operation · step 02 · deploy · step 03 · scale
               </p>
             </div>
+          </Reveal>
+        </div>
+
+        {/* giant brand line */}
+        <div className="mx-auto mt-16 max-w-7xl overflow-hidden px-5 sm:px-8">
+          <Reveal>
+            <p
+              aria-hidden
+              className="font-display select-none text-center text-[clamp(3.4rem,15.5vw,13rem)] leading-[0.82] font-medium tracking-[-0.055em] text-transparent uppercase"
+              style={{
+                backgroundImage: "linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.015))",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+              }}
+            >
+              maxmatech
+            </p>
           </Reveal>
         </div>
       </section>
 
       {/* ------- bottom bar ------- */}
       <div className="mx-auto mt-20 max-w-7xl px-5 pb-10 sm:px-8">
-        <div className="flex flex-col items-center justify-between gap-6 border-t border-white/[0.07] pt-8 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-6 border-t border-white/[0.11] pt-8 sm:flex-row">
           <a href="#top" className="flex items-center gap-2.5">
             <span className="relative grid h-8 w-8 place-items-center">
               <img
@@ -188,20 +205,20 @@ export default function Footer() {
               maxmatech solutions
             </span>
           </a>
-          <p className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">
+          <p className="font-mono text-[10px] tracking-[0.3em] text-white/48 uppercase">
             Your Certified Digital Transformation Partner
           </p>
 
           <div className="flex flex-col items-center gap-1 sm:items-end">
             <a
               href="tel:01229303030"
-              className="text-[12px] font-medium text-white/40 transition-colors hover:text-white"
+              className="text-[12px] font-medium text-white/58 transition-colors hover:text-white"
             >
               01229303030
             </a>
             <a
               href="mailto:info@maxmatech.com"
-              className="text-[12px] font-medium text-white/40 transition-colors hover:text-white"
+              className="text-[12px] font-medium text-white/58 transition-colors hover:text-white"
             >
               info@maxmatech.com
             </a>
@@ -212,7 +229,7 @@ export default function Footer() {
               <a
                 key={l}
                 href={`#${l.toLowerCase()}`}
-                className="text-[12px] font-medium text-white/40 transition-colors hover:text-white"
+                className="text-[12px] font-medium text-white/58 transition-colors hover:text-white"
               >
                 {l}
               </a>

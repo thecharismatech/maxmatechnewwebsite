@@ -111,7 +111,7 @@ export default function Problem() {
               <div className="scan-rail pointer-events-none absolute inset-0" />
 
               <div className="relative flex items-center justify-between">
-                <span className="font-mono text-[10px] tracking-[0.3em] text-white/35 uppercase">
+                <span className="font-mono text-[10px] tracking-[0.3em] text-white/52 uppercase">
                   module health — no core
                 </span>
                 <span className="animate-link-pulse flex items-center gap-2 rounded-full border border-rose-300/30 bg-rose-400/10 px-3 py-1 font-mono text-[10px] tracking-[0.2em] text-rose-200 uppercase">
@@ -128,7 +128,7 @@ export default function Problem() {
                     whileInView={{ opacity: 1, x: 0, scale: 1 }}
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.85, delay: f.delay, ease }}
-                    className="fractured rounded-2xl border border-white/[0.07] bg-white/[0.03] px-4 py-3.5"
+                    className="fractured rounded-2xl border border-white/[0.11] bg-white/[0.03] px-4 py-3.5"
                   >
                     <motion.div
                       animate={{
@@ -147,7 +147,7 @@ export default function Problem() {
                       </span>
                       <div className="min-w-0">
                         <p className="text-[13px] font-semibold text-white/85">{f.label}</p>
-                        <p className="text-[11px] text-white/35">{f.detail}</p>
+                        <p className="text-[11px] text-white/52">{f.detail}</p>
                       </div>
                       <span
                         className={`ml-auto shrink-0 rounded-full border px-2.5 py-1 font-mono text-[10px] tracking-[0.15em] uppercase ${toneStyles[f.tone]}`}
@@ -161,7 +161,7 @@ export default function Problem() {
 
               <div className="relative mt-6 flex items-center gap-2.5 rounded-xl border border-dashed border-white/10 px-4 py-3">
                 <Unplug className="h-4 w-4 shrink-0 text-white/25" />
-                <p className="font-mono text-[10px] tracking-[0.18em] text-white/30 uppercase">
+                <p className="font-mono text-[10px] tracking-[0.18em] text-white/48 uppercase">
                   no shared record · no live ledger · no single dashboard
                 </p>
               </div>
@@ -179,7 +179,7 @@ export default function Problem() {
                     <h3 className="font-display text-[15px] font-medium tracking-tight text-white">
                       {c.title}
                     </h3>
-                    <p className="mt-2 text-[13px] leading-relaxed text-white/45">{c.copy}</p>
+                    <p className="mt-2 text-[13px] leading-relaxed text-white/62">{c.copy}</p>
                   </div>
                 </div>
               </Reveal>
