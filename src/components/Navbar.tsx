@@ -97,7 +97,7 @@ export default function Navbar() {
               />
             </span>
             <span className="font-display text-[15px] font-medium tracking-tight text-white">
-              maxmatech
+              MAXMATECH
             </span>
           </a>
 
